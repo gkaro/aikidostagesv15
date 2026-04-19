@@ -9,8 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/logo_hdf"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="197dp"
+        android:layout_height="376dp"
+        app:srcCompat="@drawable/logo_aiki_hdf"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="61dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

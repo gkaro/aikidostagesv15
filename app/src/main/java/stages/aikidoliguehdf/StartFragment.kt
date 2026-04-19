@@ -49,8 +49,8 @@ class StartFragment<DataBaseHandler> : Fragment(R.layout.fragment_start) {
             view:View->view.findNavController().navigate(R.id.action_startFragment_to_favListFragment)
         }
 
-        /*social media buttons*/
-        binding.facebook.setOnClickListener {
+        /*social media buttons - supprimés le 19/04/2026*/
+        /*binding.facebook.setOnClickListener {
             val url = "https://www.facebook.com/profile.php?id=100072962274878"
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         }
@@ -63,7 +63,7 @@ class StartFragment<DataBaseHandler> : Fragment(R.layout.fragment_start) {
         binding.instagram.setOnClickListener {
             val url = "https://www.instagram.com/aikido_hdf/"
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-        }
+        }*/
 
         /*Next Course*/
         db = StagesRoomDatabase.getInstance(activity as AppCompatActivity)

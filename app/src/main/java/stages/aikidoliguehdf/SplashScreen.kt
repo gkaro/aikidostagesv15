@@ -93,7 +93,7 @@ class SplashScreen : AppCompatActivity() {
 
                     val jsonArray = JSONTokener(response).nextValue() as JSONArray
                     for (i in 0 until jsonArray.length()) {
-
+/**!! IMPORTANT : certaines données ne sont pas dans l'API de base de Wordpress : voir dans le fichier functions.php du thème !! */
                         val id = jsonArray.getJSONObject(i).getString("id")
                         val title = jsonArray.getJSONObject(i).getString("title")
                             .replace("{\"rendered\":\"", "").replace("\"}", "")
