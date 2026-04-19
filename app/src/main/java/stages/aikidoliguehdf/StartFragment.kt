@@ -16,8 +16,7 @@ import stages.aikidoliguehdf.data.StagesRoomDatabase
 import stages.aikidoliguehdf.databinding.FragmentStartBinding
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import android.content.Intent
-import android.net.Uri
+
 
 
 class StartFragment<DataBaseHandler> : Fragment(R.layout.fragment_start) {
