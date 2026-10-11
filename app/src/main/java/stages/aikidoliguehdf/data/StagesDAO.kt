@@ -98,10 +98,10 @@ interface StagesDao {
     fun getAllPlaces(): List<Places>
 
     @Query("SELECT nameplace FROM Places WHERE idplace = :idplace")
-    fun loadNamePlaceById(idplace: String): String
+    fun loadNamePlaceById(idplace: String?): String
 
     @Query("SELECT address FROM Places WHERE idplace = :idplace")
-    fun loadAddressPlaceById(idplace: String): String
+    fun loadAddressPlaceById(idplace: String?): String
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAllPlaces(vararg places: Places)

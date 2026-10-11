@@ -73,7 +73,7 @@ class FavListFragment<DataBaseHandler>  : Fragment(R.layout.fragment_fav_list) {
                 val idStage = adapter.items[position].idstages
                 val action = FavListFragmentDirections.actionFavListFragmentToStageDetailFragment(
                     idStage.toString()
-                ).setIdStage(idStage.toString())
+                )
                 view.findNavController().navigate(action)
             }
         })

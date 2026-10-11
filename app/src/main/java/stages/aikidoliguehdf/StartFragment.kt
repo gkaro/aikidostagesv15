@@ -90,7 +90,9 @@ class StartFragment<DataBaseHandler> : Fragment(R.layout.fragment_start) {
 
         binding.nextCourse.setOnClickListener {
             val idNextStage = nextCourse.firstOrNull()?.idstages
-            val action = StartFragmentDirections.actionStartFragmentToStageDetailFragment(idNextStage.toString()).setIdStage(idNextStage.toString())
+            val action = StartFragmentDirections.actionStartFragmentToStageDetailFragment(
+                IdStage = idNextStage.toString()
+            )
             view?.findNavController()?.navigate(action)
         }
 

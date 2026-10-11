@@ -38,7 +38,8 @@ class StageCatFragment<DataBaseHandler>  : Fragment() {
             override fun onItemClick(position: Int) {
                 val idCat = catAdapter.categoriesFiltered[position].idcat
                 val action = StageCatFragmentDirections.actionStageCatFragmentToStageListFragment(
-                ).setIdCategory(idCat)
+                    IdCategory = idCat
+                )
                 view.findNavController().navigate(action)
             }
         })

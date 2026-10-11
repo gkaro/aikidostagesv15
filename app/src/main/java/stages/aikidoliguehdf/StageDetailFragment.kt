@@ -2,7 +2,6 @@ package stages.aikidoliguehdf
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.CalendarContract
@@ -42,7 +41,7 @@ class StageDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View{
         val binding = FragmentStageDetailBinding.inflate(layoutInflater)
-        val idStage = args.idStage
+        val idStage = args.IdStage
 
         getItemsById(idStage)
         val item = getItemsById(idStage)
@@ -244,7 +243,7 @@ class StageDetailFragment : Fragment() {
         return db.stagesDao().getCatName(idstages = idstages)
     }
 
-    private fun getPlaceName(idplace: String): String {
+    private fun getPlaceName(idplace: String?): String {
         val db = Room.databaseBuilder(
             activity as AppCompatActivity,
             StagesRoomDatabase::class.java, "StagesDatabase"
@@ -253,7 +252,7 @@ class StageDetailFragment : Fragment() {
         return db.stagesDao().loadNamePlaceById(idplace = idplace)
     }
 
-    private fun getPlaceAddress(idplace: String): String {
+    private fun getPlaceAddress(idplace: String?): String {
         val db = Room.databaseBuilder(
             activity as AppCompatActivity,
             StagesRoomDatabase::class.java, "StagesDatabase"

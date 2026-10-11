@@ -38,7 +38,7 @@ class StageListFragment<DataBaseHandler> : Fragment(R.layout.fragment_stage_list
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = adapter
 
-        val argsCategory = args.idCategory.toString()
+        val argsCategory = args.IdCategory.toString()
         val argsPlaces = args.idPlaces.toString()
 
         if(argsCategory != "null"){
@@ -64,9 +64,8 @@ class StageListFragment<DataBaseHandler> : Fragment(R.layout.fragment_stage_list
             override fun onItemClick(position: Int) {
                 val idStage = adapter.items[position].idstages
                 val action = StageListFragmentDirections.actionStageListFragmentToStageDetailFragment(
-                    idStage.toString()
-
-                ).setIdStage(idStage.toString())
+                    IdStage = idStage.toString()
+                )
                 view.findNavController().navigate(action)
             }
         })

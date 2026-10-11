@@ -39,8 +39,8 @@ class StagePlaceFragment : Fragment() {
 
                 val idPlace = placesAdapter.placesFiltered[position].idplace
                 val action = StagePlaceFragmentDirections.actionStagePlaceFragmentToStageListFragment(
-
-                ).setIdPlaces(idPlace)
+                    idPlaces = idPlace
+                )
                 view.findNavController().navigate(action)
             }
         })
