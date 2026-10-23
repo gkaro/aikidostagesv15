@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 const val DATABASE_NAME = "StagesDatabase"
-@Database(entities = [Stages::class,Categories::class,Places::class,StagesCatMap::class, Favorites::class, StagesFavMap::class], version = 2)
+@Database(entities = [Stages::class,Categories::class,Places::class,StagesCatMap::class, Favorites::class, StagesFavMap::class], version = 3)
 
 abstract class StagesRoomDatabase : RoomDatabase() {
 

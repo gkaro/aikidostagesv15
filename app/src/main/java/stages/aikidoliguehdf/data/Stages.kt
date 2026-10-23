@@ -8,6 +8,7 @@ data class Stages(
     @PrimaryKey @ColumnInfo(name = "idstages") var idstages: Long? = null,
     @ColumnInfo(name = "title") var title: String,
     @ColumnInfo(name = "startdate") var startdate: String,
+    @ColumnInfo(name = "helloasso") var helloasso: String = "",
     @ColumnInfo(name = "media") var featured_media: String,
     @ColumnInfo(name = "idcategory") var mec_category: String,
     @ColumnInfo(name = "cost") var cost: String,

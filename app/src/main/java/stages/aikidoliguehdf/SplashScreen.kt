@@ -107,7 +107,7 @@ class SplashScreen : AppCompatActivity() {
                         val endampm = jsonArray.getJSONObject(i).getString("endampm")
 
                         val startdate = jsonArray.getJSONObject(i).getString("startdate")
-
+                        val helloasso = jsonArray.getJSONObject(i).getString("link_HA")
                         val media = jsonArray.getJSONObject(i).getString("featured_media")
                         val category =
                             jsonArray.getJSONObject(i).getString("mec_category").replace(",", ", ")
@@ -133,6 +133,7 @@ class SplashScreen : AppCompatActivity() {
                                 id.toLong(),
                                 title,
                                 startdate,
+                                helloasso,
                                 media,
                                 category,
                                 cost,

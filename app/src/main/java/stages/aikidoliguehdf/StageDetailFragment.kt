@@ -2,7 +2,6 @@ package stages.aikidoliguehdf
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.CalendarContract
@@ -15,7 +14,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.room.Room
 import stages.aikidoliguehdf.data.Favorites
 import stages.aikidoliguehdf.data.Stages
 import stages.aikidoliguehdf.data.StagesDao
@@ -162,7 +160,17 @@ class StageDetailFragment : Fragment() {
 
         binding.detItemStartdate.text = "Date : $niceDate"
         binding.detItemStartHour.text = "Horaires : " + starthours + "h"+ startminutes + " - " + endhours + "h"+ endminutes
-        binding.detItemLink.text = "Lien : " + item.first().link
+
+        val stageLink = item.first().helloasso
+        if (stageLink.isNotEmpty()) {
+            binding.btnHelloAsso.visibility = View.VISIBLE
+            binding.btnHelloAsso.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW, stageLink.toUri())
+                startActivity(intent)
+            }
+        } else {
+            binding.btnHelloAsso.visibility = View.GONE
+        }
 
         binding.detItemCost.text = "Coût : " + item.first().cost + "€"
         binding.detItemCat.text = "Type : $catname"
@@ -226,50 +234,33 @@ class StageDetailFragment : Fragment() {
 
 
     private fun getItemsById(idstages: String): List<Stages> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
-
+        val db = StagesRoomDatabase.getInstance(requireContext())
         return db.stagesDao().loadAllByIds(idstages = idstages)
-
     }
 
     private fun getCatName(idstages: String): List<String> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
-
+        val db = StagesRoomDatabase.getInstance(requireContext())
         return db.stagesDao().getCatName(idstages = idstages)
     }
 
     private fun getPlaceName(idplace: String): String {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
-
+        val db = StagesRoomDatabase.getInstance(requireContext())
         return db.stagesDao().loadNamePlaceById(idplace = idplace)
     }
 
     private fun getPlaceAddress(idplace: String): String {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
-
+        val db = StagesRoomDatabase.getInstance(requireContext())
         return db.stagesDao().loadAddressPlaceById(idplace = idplace)
     }
 
     private fun insertFav(idStagesFav: String){
-        db = StagesRoomDatabase.getInstance(activity as AppCompatActivity)
+        db = StagesRoomDatabase.getInstance(requireContext())
         dao = db.stagesDao()
         dao.insertFav(Favorites(idfav = null, idstagesfav = idStagesFav))
     }
 
     private fun checkFav(idstage: String): String? { /*add ? to allow null value*/
-        db = StagesRoomDatabase.getInstance(activity as AppCompatActivity)
+        db = StagesRoomDatabase.getInstance(requireContext())
         dao = db.stagesDao()
         return db.stagesDao().getFavsbyStageId(idstage = idstage)
     }

@@ -13,7 +13,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import stages.aikidoliguehdf.adapter.ListFavAdapter
 import stages.aikidoliguehdf.data.Stages
@@ -81,10 +80,7 @@ class FavListFragment<DataBaseHandler>  : Fragment(R.layout.fragment_fav_list) {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getItemsList() {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
         val newList = mutableListOf<Stages>()
         var stageList : ArrayList<Stages>
         val favList = db.stagesDao().getAllFavs()
@@ -97,10 +93,7 @@ class FavListFragment<DataBaseHandler>  : Fragment(R.layout.fragment_fav_list) {
     }
 
     private fun deleteFav(id : String){
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
         db.stagesDao().deleteFavbyId(id = id)
 
 

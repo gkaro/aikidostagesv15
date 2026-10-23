@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
 import stages.aikidoliguehdf.adapter.ListStageAdapter
 import stages.aikidoliguehdf.data.Stages
 import stages.aikidoliguehdf.data.StagesRoomDatabase
@@ -75,10 +74,7 @@ class StageListFragment<DataBaseHandler> : Fragment(R.layout.fragment_stage_list
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getItemsList(): ArrayList<Stages> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
         val current = LocalDate.now().minusMonths(3)
         val stageList = db.stagesDao().getAllxMonths(current.toString())
         adapter.setDataList(stageList as ArrayList<Stages>)
@@ -86,10 +82,7 @@ class StageListFragment<DataBaseHandler> : Fragment(R.layout.fragment_stage_list
     }
 
     private fun getItemsListByCat(idcat: String): ArrayList<Stages> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
         val stageList = db.stagesDao().getAllbyCat(idcat = idcat)
 
         adapter.setDataList(stageList as ArrayList<Stages>)
@@ -97,10 +90,7 @@ class StageListFragment<DataBaseHandler> : Fragment(R.layout.fragment_stage_list
     }
 
     private fun getItemsListByPlace(idplace: String): ArrayList<Stages> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
         val stageList = db.stagesDao().getAllbyPlace(idplace = idplace)
 
         adapter.setDataList(stageList as ArrayList<Stages>)

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Aikido Ligue HDF</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calendar">Calendrier</string>
+    <string name="time">Horaires</string>
+    <string name="cost">Coût</string>
+    <string name="next">Suivant</string>
 </resources>

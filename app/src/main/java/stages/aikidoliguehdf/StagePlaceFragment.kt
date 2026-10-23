@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
 import stages.aikidoliguehdf.adapter.ListPlacesAdapter
 import stages.aikidoliguehdf.data.Places
 import stages.aikidoliguehdf.data.StagesRoomDatabase
@@ -47,10 +46,7 @@ class StagePlaceFragment : Fragment() {
     }
 
     private fun getPlacesList(): ArrayList<Places> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
 
         val placesList = db.stagesDao().getAllPlaces()
         placesAdapter.setPlacesList(placesList as ArrayList<Places>)

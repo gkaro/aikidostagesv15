@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
 import stages.aikidoliguehdf.adapter.ListCatAdapter
 import stages.aikidoliguehdf.data.Categories
 import stages.aikidoliguehdf.data.StagesRoomDatabase
@@ -45,10 +44,7 @@ class StageCatFragment<DataBaseHandler>  : Fragment() {
     }
 
     private fun getCatList(): ArrayList<Categories> {
-        val db = Room.databaseBuilder(
-            activity as AppCompatActivity,
-            StagesRoomDatabase::class.java, "StagesDatabase"
-        ).allowMainThreadQueries().build()
+        val db = StagesRoomDatabase.getInstance(requireContext())
         val catList = db.stagesDao().getAllCategories()
 
         catAdapter.setCatList(catList as ArrayList<Categories>)
