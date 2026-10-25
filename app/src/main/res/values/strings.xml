@@ -5,4 +5,5 @@
     <string name="time">Horaires</string>
     <string name="cost">Coût</string>
     <string name="next">Suivant</string>
+    <string name="categorie">Catégorie</string>
 </resources>
