@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager"
-            android:background="#ECEFF1"/>
+            android:background="@color/recycler_bg"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

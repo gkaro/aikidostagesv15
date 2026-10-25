@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="16sp"
         android:layout_marginBottom="1dp"
-        android:background="@color/backgroundList"
+        android:background="@color/card_bg"
         >
            <TextView
                 android:id="@+id/txtDate"

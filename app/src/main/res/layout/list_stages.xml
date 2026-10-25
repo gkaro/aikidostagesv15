@@ -13,6 +13,7 @@
         android:foreground="?attr/selectableItemBackground"
         app:cardCornerRadius="12dp"
         app:cardElevation="3dp"
+        app:cardBackgroundColor="@color/card_bg"
         app:strokeColor="@color/light_grey"
         app:strokeWidth="1dp">
 
@@ -121,14 +122,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/timeContainer"
                 app:layout_constraintEnd_toStartOf="@+id/imgChevron"
                 app:layout_constraintTop_toTopOf="@+id/timeContainer">
-
-                <ImageView
-                    android:id="@+id/imgEuro"
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:contentDescription="@string/cost"
-                    android:src="@drawable/ic_baseline_euro_24"
-                    app:tint="@color/red_logo" />
 
                 <TextView
                     android:id="@+id/txtCost"

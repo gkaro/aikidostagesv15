@@ -5,7 +5,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F8F9FA">
+        android:background="@color/detail_bg">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -23,6 +23,7 @@
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/card_bg"
                     app:strokeWidth="0dp"
                     android:layout_marginBottom="16dp">
 
@@ -38,7 +39,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="22sp"
                             android:textStyle="bold"
-                            android:textColor="#1A1C1E"
+                            android:textColor="@color/text_primary"
                             android:layout_marginBottom="12dp" />
 
                         <TextView
@@ -46,7 +47,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:textColor="#555555"
+                            android:textColor="@color/text_secondary"
                             android:layout_marginBottom="8dp"/>
 
                         <TextView
@@ -54,7 +55,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_body"
                             android:layout_marginBottom="6dp" />
 
                         <TextView
@@ -62,7 +63,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_body"
                             android:layout_marginBottom="6dp" />
 
                         <TextView
@@ -71,13 +72,13 @@
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textColor="#0061A4"
+                            android:textColor="@color/cost_text_detail"
                             android:layout_marginBottom="8dp" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#E0E0E0"
+                            android:background="@color/divider_color"
                             android:layout_marginVertical="12dp" />
 
                         <TextView
@@ -85,7 +86,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
-                            android:textColor="#333333" />
+                            android:textColor="@color/text_body" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -117,11 +118,11 @@
                         android:layout_weight="1"
                         android:layout_marginEnd="8dp"
                         android:text="Itinéraire"
-                        android:textColor="@color/black_logo"
-                        android:backgroundTint="@color/white"
-                        app:strokeColor="@color/black_logo"
+                        android:textColor="@color/button_secondary_text"
+                        android:backgroundTint="@color/button_secondary_bg"
+                        app:strokeColor="@color/button_secondary_stroke"
                         app:strokeWidth="1dp"
-                        app:iconTint="@color/black_logo"
+                        app:iconTint="@color/button_secondary_text"
                         app:icon="@android:drawable/ic_menu_directions" />
 
                     <com.google.android.material.button.MaterialButton
@@ -132,11 +133,11 @@
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
                         android:text="Calendrier"
-                        android:textColor="@color/black_logo"
-                        android:backgroundTint="@color/white"
-                        app:strokeColor="@color/black_logo"
+                        android:textColor="@color/button_secondary_text"
+                        android:backgroundTint="@color/button_secondary_bg"
+                        app:strokeColor="@color/button_secondary_stroke"
                         app:strokeWidth="1dp"
-                        app:iconTint="@color/black_logo"
+                        app:iconTint="@color/button_secondary_text"
                         app:icon="@android:drawable/ic_menu_my_calendar" />
 
                 </LinearLayout>

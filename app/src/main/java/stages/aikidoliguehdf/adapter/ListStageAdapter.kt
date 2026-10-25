@@ -49,11 +49,7 @@ class ListStageAdapter: RecyclerView.Adapter<ListStageAdapter.ListStageViewHolde
 
         val formattedCost = formatCost(item.cost)
         holder.binding.txtCost.text = formattedCost
-        if (formattedCost == "Gratuit") {
-            holder.binding.imgEuro.visibility = android.view.View.GONE
-        } else {
-            holder.binding.imgEuro.visibility = android.view.View.VISIBLE
-        }
+
     }
 
     private fun formatTime(item: Stages): String {

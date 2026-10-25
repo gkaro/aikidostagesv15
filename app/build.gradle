@@ -14,9 +14,9 @@ android {
         applicationId "stages.aikidoliguehdf"
         minSdk 21
         //noinspection OldTargetApi
-        targetSdk 35
-        versionCode 15
-        versionName '1.2.10'
+        targetSdk 36
+        versionCode 19
+        versionName '1.5.1'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
